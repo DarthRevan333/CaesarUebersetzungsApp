@@ -3,7 +3,7 @@ Eine App für verschiedene Plattformen, primär Android, mit welcher man Überse
 # APK Download
 Die .apk Datei kann unter folgendem Link heruntergeladen werden: https://drive.google.com/file/d/14bl73-QmicgIGPKQE57pelzqIMHggWGs/view?usp=sharing
 # Hinweise zur App
-Bei der Suche mit der App wird der eingegebenen Zeichenfolge automatisch ein Leerzeichen vorangestellt um Verwechslungen zu vermeiden z.B. Suchbegriff: "*at barbari*" würde ansonsten auch "er*at barbari*" finden.
+Bei der Suche mit der App wird der eingegebenen Zeichenfolge automatisch ein Leerzeichen vorangestellt um Verwechslungen zu vermeiden z.B. Suchbegriff: "at barbari" würde ansonsten auch "erat barbari" finden.
 Ebenfalls werden alle vorangestellten und nachgestellten Leerzeichen (bis auf das automatisch vorangestellte) ignoriert bzw. entfernt.
 
 Mit "Immer vollkommen ausweiten" kann eingestellt werden, ob, jedes mal wenn der Suchknopf gedrückt wird, auch automatisch alle Textstellen auf volle Größe ausgeweitet werden sollen.
