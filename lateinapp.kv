@@ -1,0 +1,277 @@
+<CLabel>:
+    font_size: 30
+    size: self.texture_size
+    size_hint_y: None
+    markup: True
+    valign: "top"
+
+<SettingsChip>
+    pos_hint: {"center_y": 0.5, "center_x": 0.5}
+    line_color: app.theme_cls.disabled_hint_text_color
+    font_size: 40
+    size_hint: None, None
+    size: (60, 60)
+
+<HeaderLabel>
+    font_style: "H5"
+    bold: True
+    valign: "top"
+    size_hint_y: None
+    size: self.texture_size
+    halign: "center"
+
+<TLayout>
+    size_hint_y: None
+    height: self.minimum_height
+    spacing: 10
+    orientation: "horizontal"
+    valign: "top"
+    padding: [0, 15, 0, 20]
+
+<TranslationLayout>
+    size_hint_y: None
+    height: self.minimum_height
+    spacing: 10
+    orientation: "vertical"
+    valign: "top"
+
+<Counter@MDCard>
+    border_radius: 35
+    radius: [35]
+    size_hint: None, None
+    height: 200
+    width: 365
+    line_color: app.theme_cls.disabled_hint_text_color
+    pos_hint: {"center_x": 0.5}
+    title_text: ""
+
+    MDBoxLayout:
+        orientation: "vertical"
+        pos_hint: {"center_x": 0.5}
+
+        Widget:
+            size_hint_y: 0.1
+
+        MDLabel:
+            size_hint_y: 0.15
+            text: root.title_text
+            halign: "center"
+            bold: True
+
+        MDBoxLayout:
+            size_hint_y: 0.75
+            orientation: "horizontal"
+
+            MDIconButton:
+                icon: 'plus-box-outline'
+                pos_hint: {'center_y': .5, 'center_x': .25}
+                on_press: app.increase_counter()
+                theme_text_color: "Custom"
+                text_color: (0, 1, 0, 1)
+                icon_size: 60
+
+            MDLabel:
+                id: current_count
+                font_style: 'H5'
+                halign: 'center'
+                pos_hint: {'center_y': .5, 'center_x': .5}
+
+            MDIconButton:
+                icon: 'minus-box-outline'
+                pos_hint: {'center_y': .5, 'center_x': .75}
+                on_press: app.decrease_counter()
+                theme_text_color: "Custom"
+                text_color: (1, 0, 0, 1)
+                icon_size: 60
+
+
+MDBoxLayout:
+    orientation: "vertical"
+    md_bg_color: (0.92, 0.84, 0.7, 1)
+
+    MDTopAppBar:
+        title: "LateinApp"
+
+    MDBottomNavigation:
+        id: nav
+
+        MDBottomNavigationItem:
+            name: "screen 1"
+            text: "Suche"
+            icon: "book-search"
+
+            MDScrollView:
+                do_scroll_x: False
+                do_scroll_y: True
+                effect_cls: "ScrollEffect"
+
+                MDBoxLayout:
+                    orientation: "vertical"
+                    spacing: 30
+                    size_hint_y: None
+                    height: self.minimum_height
+                    id: mbox
+
+                    Widget:
+
+                    MDTextField:
+                        id: search_field
+                        font_size: 35
+                        hint_text: "Suchen nach"
+                        helper_text: "Das Feld muss ausgefüllt sein"
+                        helper_text_mode: "on_error"
+                        size_hint_x: 0.95
+                        pos_hint: {"x": 0.03}
+                        color_mode: "accent"
+                        line_color_focus: 0, 0.5, 1, 1
+                        fill_color: 0.8, 0.9, 1, 1
+                        mode: "fill"
+                        icon_left: "card-search"
+                        icon_left_color_normal: (76/255, 129/255, 161/255, 1)
+                        icon_left_color_focused: (76/255, 129/255, 161/255, 1)
+                        keyboard_suggestions: True
+                        on_text_validate: app.validate_search_field(*args)
+
+                    MDRectangleFlatIconButton:
+                        id: search_btn
+                        text: "Suchen"
+                        icon: "file-document-outline"
+                        font_style: "H5"
+                        size_hint_x: 0.9
+                        size_hint_y: 1
+                        pos_hint: {"x": 0.05, "y": 0.5}
+                        on_press: app.validate_search_field(*args)
+
+                    MDSeparator:
+                        id: mbox_sep
+
+                    MDBoxLayout:
+                        adaptive_height: True
+                        id: cbox
+                        orientation: "vertical"
+                        spacing: 30
+
+        MDBottomNavigationItem:
+            name: "screen 2"
+            text: "Einstellungen"
+            icon: "cog"
+
+            MDScrollView:
+                id: SettingsScrollView
+                do_scroll_x: False
+                do_scroll_y: True
+                effect_cls: "ScrollEffect"
+
+                MDBoxLayout:
+                    orientation: "vertical"
+                    spacing: 30
+                    valign: "bottom"
+                    size_hint_y: None
+                    height: self.minimum_height
+
+                    Widget:
+                        size_hint_y: 0.001
+                    Widget:
+                        size_hint_y: 0.001
+
+                    MDLabel:
+                        text: "   Einstellungen"
+                        font_size: 45
+                        theme_text_color: "Custom"
+                        text_color: (0.2549, 0.4118, 0.8824, 1)
+
+                    Widget:
+
+                    SettingsChip:
+                        id: markingc
+                        selected: True
+                        text: "Gesuchten Text hervorheben?   "
+                        check: True
+                        icon_left: "check-circle-outline"
+                        on_press: app.toggle_chip("markingc")
+                        icon_left_color: (0, 1, 0, 1)
+					
+					Widget:
+                        size_hint_y: 0.001
+
+                    SettingsChip:
+                        id: expanding
+                        selected: False
+                        text: "Auf volle Größe ausweiten?       "
+                        check: True
+                        icon_left: "circle-off-outline"
+                        on_press: app.toggle_chip("expanding")
+                        icon_left_color: (1, 0, 0, 1)
+
+					Widget:
+                        size_hint_y: 0.001
+
+                    SettingsChip:
+                        id: always_expanding
+                        selected: False
+                        text: "Immer vollkommen ausweiten?"
+                        check: True
+                        icon_left: "circle-off-outline"
+                        on_press: app.toggle_chip("always_expanding")
+                        icon_left_color: (1, 0, 0, 1)
+
+					Widget:
+                        size_hint_y: 0.001
+
+                    SettingsChip:
+                        id: display_title
+                        selected: True
+                        text: "Textstellen Quelle anzeigen?     "
+                        check: True
+                        icon_left: "check-circle-outline"
+                        on_press: app.toggle_chip("display_title")
+                        icon_left_color: (0, 1, 0, 1)
+
+                    Widget:
+                        size_hint_y: 0.001
+
+                    Counter:
+                        id: counter
+                        title_text: "Parallele Ladebegrenzung"
+
+                    Widget:
+                        size_hint_y: 0.001
+
+                    MDRectangleFlatIconButton:
+                        id: data_del_btn
+                        icon: "trash-can-outline"
+                        icon_size: 50
+                        text: "Daten Löschen"
+                        theme_text_color: "Custom"
+                        text_color: 1, 1, 1, 1
+                        line_color: "orange"
+                        ripple_color: 1, 0, 0, 0.3
+                        radius: [15]
+                        theme_icon_color: "Custom"
+                        md_bg_color: 0.686, 0.133, 0.133
+                        pos_hint: {"center_y": 0.5, "center_x": 0.5}
+                        icon_color: "orange"
+                        on_press: app.delete_data()
+
+                    MDRectangleFlatIconButton:
+                        id: data_re_btn
+                        icon: "reload"
+                        icon_size: 50
+                        text: "Daten neu laden"
+                        theme_text_color: "Custom"
+                        text_color: 1, 1, 1, 1
+                        md_bg_color: 0.05, 0.36, 0.53, 1
+                        line_color: 0.31, 0.71, 0.86, 1
+                        ripple_color: 0, 0.22, 0.39, 0.3
+                        radius: [15]
+                        pos_hint: {"center_y": 0.5, "center_x": 0.5}
+                        icon_color: "white"
+                        on_press: app.reload_data()
+
+                    Widget:
+                        size_hint_y: 0.001
+
+					MDLabel:
+						text: "Hinweis: Alle Daten stammen von gottwein.de"
+                        font_style: "Subtitle2"
+						pos_hint: {"center_x": 0.545}
