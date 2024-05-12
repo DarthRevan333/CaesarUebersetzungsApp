@@ -1,7 +1,7 @@
 # CaesarUebersetzungsApp
 Eine App für verschiedene Plattformen, primär Android, mit welcher man Übersetzungen und Textstellen aus Caesars "De bello gallico"(Buch 1-8) finden kann.
 # APK Download
-Die .apk Datei kann unter folgendem Link heruntergeladen werden: https://drive.google.com/file/d/14bl73-QmicgIGPKQE57pelzqIMHggWGs/view?usp=sharing
+Die .apk Datei kann neben dem Download durch Github auch unter folgendem Link heruntergeladen werden: https://drive.google.com/file/d/14bl73-QmicgIGPKQE57pelzqIMHggWGs/view?usp=sharing
 # Hinweise zur App
 Bei der Suche mit der App wird der eingegebenen Zeichenfolge automatisch ein Leerzeichen vorangestellt um Verwechslungen zu vermeiden z.B. Suchbegriff: "at barbari" würde ansonsten auch "erat barbari" finden.
 Ebenfalls werden alle vorangestellten und nachgestellten Leerzeichen (bis auf das automatisch vorangestellte) ignoriert bzw. entfernt.
