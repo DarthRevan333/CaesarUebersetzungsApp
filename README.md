@@ -7,7 +7,7 @@ Es bestehen keine Pläne, diese App in Zukunft weiterzuentwickeln.
 Falls es dennoch dazu kommen sollte, wird es mit einem Umstieg auf Kotlin einhergehen, bei dem die im Moment auf Python basierte App und ihr momentane Code nicht mehr verwendet werden kann.
 
 # APK Download
-Die .apk Datei kann neben dem Download durch Github auch unter folgendem Link heruntergeladen werden: https://drive.google.com/file/d/14bl73-QmicgIGPKQE57pelzqIMHggWGs/view?usp=sharing
+Die .apk Datei kann neben dem Download durch Github auch [hier](https://drive.google.com/file/d/1dpQpOXywXwFo9lQ9qOvHwIgJ4y0cFQ83/view?usp=sharing) heruntergeladen werden.
 
 # Hinweise zur App
 Bei der Suche mit der App wird der eingegebenen Zeichenfolge automatisch ein Leerzeichen vorangestellt um Verwechslungen zu vermeiden z.B. Suchbegriff: "at barbari" würde ansonsten auch "erat barbari" finden.
