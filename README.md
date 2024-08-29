@@ -1,7 +1,7 @@
 # CaesarUebersetzungsApp
 Eine App für verschiedene Plattformen, primär Android, mit welcher man Übersetzungen und Textstellen aus Caesars ["De bello gallico"](https://de.wikipedia.org/wiki/De_bello_Gallico)(Buch 1-8) finden kann.
 
-<img src="readme_front.png" alt="Picture of app" height="75%">
+<img src="readme_front.png" alt="Picture of app" width="40%">
 
 ## Fortführung
 Es bestehen keine Pläne, diese App in Zukunft weiterzuentwickeln.
